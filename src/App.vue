@@ -22,7 +22,7 @@
         <td>ALL Number{{ allsum() }}</td>
       </tr>
     </table>
-    <div>
+    <div v-show="false">
       <p>商品清单如下：</p>
       <p v-for="item in shopData" :key="item.price">
         {{ item.shopName + item.price }}/元份
@@ -37,6 +37,8 @@
       ></food>
       <p>总价为{{ shopadd() }}</p>
     </div>
+    <!-- <nav-v></nav-v> -->
+    <tian-jian></tian-jian>
   </div>
 </template>
 
@@ -44,8 +46,10 @@
 import dog from "@/components/dog.vue";
 import mytr from "@/components/mytr.vue";
 import food from "@/components/food.vue";
+import navV from "@/components/nav.vue";
+import TianJian from "@/components/tianjia.vue";
 export default {
-  components: { dog, mytr, food },
+  components: { dog, mytr, food, navV, TianJian },
   data() {
     return {
       arr: [],
